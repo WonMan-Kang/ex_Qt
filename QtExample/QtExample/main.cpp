@@ -1,10 +1,11 @@
+#include "stdafx.h"
 #include "QtExample.h"
-#include <QtWidgets/QApplication>
-#include <qsharedmemory.h>
+
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
+	a.installEventFilter(new QEventFilter());
 
 	QSharedMemory shared("QtExample");
 	if(!shared.create(512, QSharedMemory::ReadWrite)){

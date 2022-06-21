@@ -1,7 +1,7 @@
 #pragma once
 
-#include <QtWidgets/QMainWindow>
 #include "ui_QtExample.h"
+#include "stdafx.h"
 
 class QtExample : public QMainWindow
 {
