@@ -29,7 +29,6 @@ bool QEventFilter::eventFilter(QObject *obj, QEvent *e)
 		}
 	}
 
-
     return QObject::eventFilter(obj, e);
 }
 

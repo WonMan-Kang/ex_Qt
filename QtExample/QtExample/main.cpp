@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "lib.h"
 #include "QtExample.h"
 
 

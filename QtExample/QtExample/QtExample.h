@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ui_QtExample.h"
-#include "stdafx.h"
+#include "lib.h"
 
 class QtExample : public QMainWindow
 {
@@ -13,4 +13,9 @@ public:
 
 private:
     Ui::QtExampleClass ui;
+
+
+private slots:
+	void pushButtonFunc(void);
+
 };

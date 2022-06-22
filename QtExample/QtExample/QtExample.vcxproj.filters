@@ -50,7 +50,7 @@
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
+    <ClInclude Include="lib.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
