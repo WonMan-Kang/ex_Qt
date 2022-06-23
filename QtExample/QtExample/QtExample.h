@@ -11,11 +11,9 @@ public:
     QtExample(QWidget *parent = nullptr);
     ~QtExample();
 
+
 private:
     Ui::QtExampleClass ui;
-
-
-private slots:
-	void pushButtonFunc(void);
+	bool eventFilter(QObject *obj, QEvent *e);
 
 };

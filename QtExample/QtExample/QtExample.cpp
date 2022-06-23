@@ -6,7 +6,8 @@ QtExample::QtExample(QWidget *parent) : QMainWindow(parent)
 
     setWindowTitle("QtExample");
 
-	connect(ui.pushButton, SIGNAL(clicked()), SLOT(pushButtonFunc()));
+	ui.label->installEventFilter(this);
+	ui.pushButton->installEventFilter(this);
 }
 
 QtExample::~QtExample()
@@ -14,8 +15,34 @@ QtExample::~QtExample()
 
 }
 
-void QtExample::pushButtonFunc(void)
+bool QtExample::eventFilter(QObject *obj, QEvent *e)
 {
-	printf("push\n");
-	ui.label->setText("push");
+	int key;
+	QString objName = obj->objectName();
+	QKeyEvent *keyEvent = static_cast<QKeyEvent*>(e);
+	QEvent::Type eventType = keyEvent->type();
+
+	if(eventType==QEvent::KeyPress)
+    {
+
+		if(objName=="pushButton"){
+			printf("keyPress : pushButton\n");
+		}else{
+			printf("none\n");
+		}
+	}
+	else if(eventType==QEvent::MouseButtonRelease)
+	{
+		if(objName=="pushButton"){
+			printf("mouseClick : pushButton\n");
+		}else if(objName=="label"){
+			printf("mouseClick : label\n");
+		}else{
+			printf("none\n");
+		}
+	}
+
+	return QObject::eventFilter(obj, e);
 }
+
+
